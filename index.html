@@ -6,101 +6,67 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Curriculum Vitae - [Nama Anda]</title>
     <style>
-        /* Global styles */
+        /* Reset CSS */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
         }
 
         body {
-            background-color: #f4f7fc;
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Main container */
         .container {
-            width: 80%;
             max-width: 900px;
-            margin: 40px auto;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 10px;
             padding: 30px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
+        /* Header Section */
         .header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
-        /* Styling the photo */
-        .header .photo {
+        .header img {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            overflow: hidden;
-            margin-right: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .header .photo img {
-            width: 100%;
-            height: 100%;
             object-fit: cover;
+            margin-right: 20px;
         }
 
         .header h1 {
             font-size: 36px;
-            color: #003366; /* Navy Blue */
-            font-weight: bold;
+            font-weight: 600;
+            color: #4f9be6;
         }
 
         .header p {
             font-size: 18px;
             color: #6c757d;
-            font-weight: normal;
+            font-weight: 400;
         }
 
-        /* Section styling */
-        .section {
-            margin-top: 30px;
-        }
-
-        .section h2 {
+        /* Section Titles */
+        .section-title {
             font-size: 24px;
-            color: #003366;
-            border-bottom: 2px solid #003366;
+            color: #4f9be6;
+            border-bottom: 2px solid #4f9be6;
             padding-bottom: 5px;
             margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
-        .section p,
-        .section ul {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #495057;
-        }
-
-        .section ul {
-            margin-left: 20px;
-        }
-
-        .section ul li {
-            list-style-type: disc;
-            margin-bottom: 5px;
-        }
-
-        /* Contact Info Section */
+        /* Contact Info */
         .contact-info {
             display: flex;
             justify-content: space-between;
@@ -113,81 +79,97 @@
 
         .contact-info p {
             font-size: 16px;
-        }
-
-        /* Button */
-        .cta-button {
-            display: inline-block;
-            background-color: #003366;
-            color: white;
-            padding: 12px 25px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
-            text-align: center;
-            cursor: pointer;
-            text-transform: uppercase;
-            border: 2px solid transparent;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #001f3d;
-            border-color: #001f3d;
-        }
-
-        .cta-button:focus {
-            outline: none;
-            box-shadow: 0 0 10px rgba(0, 51, 102, 0.6);
-        }
-
-        /* Footer styling */
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px 0;
-            background-color: #003366;
-            color: white;
-            border-radius: 0 0 12px 12px;
-        }
-
-        .footer p {
-            font-size: 14px;
             margin-bottom: 5px;
         }
 
-        .footer a {
+        /* Experience & Education */
+        .experience, .education {
+            margin-bottom: 30px;
+        }
+
+        .experience ul, .education ul {
+            list-style-type: none;
+        }
+
+        .experience ul li, .education ul li {
+            padding-left: 15px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .experience ul li::before, .education ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #4f9be6;
+        }
+
+        /* Skills Section */
+        .skills ul {
+            list-style-type: none;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .skills ul li {
+            background-color: #4f9be6;
+            color: white;
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #4f9be6;
             color: white;
             font-weight: bold;
-            font-size: 16px;
+            text-transform: uppercase;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #002147;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 15px 0;
+            background-color: #4f9be6;
+            color: white;
+            border-radius: 0 0 10px 10px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-                margin: 20px;
+            .header {
+                flex-direction: column;
+                text-align: center;
             }
 
-            .header h1 {
-                font-size: 28px;
+            .header img {
+                margin-right: 0;
+                margin-bottom: 15px;
             }
 
-            .header p {
-                font-size: 16px;
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .section h2 {
-                font-size: 20px;
-            }
-
-            .cta-button {
-                font-size: 16px;
-                padding: 10px 20px;
+            .contact-info div {
+                width: 100%;
+                margin-bottom: 10px;
             }
         }
-
     </style>
 </head>
 <body>
@@ -195,10 +177,7 @@
     <div class="container">
         <!-- Header Section -->
         <div class="header">
-            <div class="photo">
-                <!-- Replace the src with your image file path -->
-                <img src="foto.jpg" alt="Foto [Nama Anda]">
-            </div>
+            <img src="foto.jpg" alt="Foto [Nama Anda]">
             <div>
                 <h1>[Nama Anda]</h1>
                 <p>[Posisi yang Dilamar]</p>
@@ -206,21 +185,20 @@
         </div>
 
         <!-- Contact Information -->
-        <div class="section contact-info">
+        <div class="contact-info">
             <div>
-                <h2>Alamat</h2>
-                <p>[Alamat Anda]</p>
+                <p><strong>Email:</strong> [Email Anda]</p>
+                <p><strong>Telepon:</strong> [Nomor Telepon Anda]</p>
             </div>
             <div>
-                <h2>Kontak</h2>
-                <p>Email: [Email Anda]</p>
-                <p>Telepon: [Nomor Telepon Anda]</p>
+                <p><strong>LinkedIn:</strong> [LinkedIn Anda]</p>
+                <p><strong>Alamat:</strong> [Alamat Anda]</p>
             </div>
         </div>
 
         <!-- Experience Section -->
-        <div class="section">
-            <h2>Pengalaman Kerja</h2>
+        <div class="experience">
+            <h2 class="section-title">Pengalaman Kerja</h2>
             <ul>
                 <li><strong>[Nama Perusahaan]</strong> – [Posisi] ([Tahun Mulai] - [Tahun Selesai])</li>
                 <li><strong>[Nama Perusahaan]</strong> – [Posisi] ([Tahun Mulai] - [Tahun Selesai])</li>
@@ -229,8 +207,8 @@
         </div>
 
         <!-- Education Section -->
-        <div class="section">
-            <h2>Pendidikan</h2>
+        <div class="education">
+            <h2 class="section-title">Pendidikan</h2>
             <ul>
                 <li><strong>[Nama Universitas]</strong> – [Gelar] ([Tahun Masuk] - [Tahun Lulus])</li>
                 <li><strong>[Nama Sekolah]</strong> – [Jurusan] ([Tahun Masuk] - [Tahun Lulus])</li>
@@ -238,8 +216,8 @@
         </div>
 
         <!-- Skills Section -->
-        <div class="section">
-            <h2>Keterampilan</h2>
+        <div class="skills">
+            <h2 class="section-title">Keterampilan</h2>
             <ul>
                 <li>[Skill 1]</li>
                 <li>[Skill 2]</li>
@@ -248,19 +226,8 @@
             </ul>
         </div>
 
-        <!-- Languages Section -->
-        <div class="section">
-            <h2>Bahasa</h2>
-            <ul>
-                <li>[Bahasa 1] - [Tingkat Kemampuan]</li>
-                <li>[Bahasa 2] - [Tingkat Kemampuan]</li>
-            </ul>
-        </div>
-
-        <!-- Button for download or contact -->
-        <div>
-            <a href="mailto:[Email Anda]" class="cta-button">Hubungi Saya</a>
-        </div>
+        <!-- CTA Button -->
+        <a href="mailto:[Email Anda]" class="cta-button">Hubungi Saya</a>
 
         <!-- Footer Section -->
         <div class="footer">
